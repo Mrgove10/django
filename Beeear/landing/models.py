@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class little(models.Model):
-    name = models.CharField(),
-    weight = models.PositiveIntegerField(),
-    user = models.ForeignKey(User)
+class Little(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)    
+    weight = models.PositiveIntegerField()
